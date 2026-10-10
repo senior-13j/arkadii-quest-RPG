@@ -6,7 +6,7 @@ quests, develop your hero, and meet other players in a persistent 3D world.
 Олдскульное фэнтези-приключение в браузере: исследуйте Аркадию, выполняйте
 задания и развивайте своего героя в общем мире.
 
-![Arkadii Quest hero overlooking the road into Arkadia](public/images/arkadii-quest-keyart.webp)
+![Arkadii Quest explorer overlooking the road into Arkadia](public/images/arkadii-quest-frontier.webp)
 
 Arkadii Quest is a multiplayer top-down RPG built with Babylon.js, Colyseus,
 Express, TypeScript, and SQL persistence. The repository contains the browser
@@ -55,9 +55,9 @@ panels without requiring the player to discover controls by trial and error.
 On desktop, press `F1` at any time to reopen the controls guide. Touch players
 can use the persistent guide button.
 
-The camera follows the active character automatically and keeps the action
-framed. Mouse-wheel zoom and mouse-drag rotation are intentionally not gameplay
-controls.
+The third-person camera is mounted behind the active character. It follows the
+same facing angle whenever the hero turns and keeps the action framed. Mouse-wheel
+zoom and mouse-drag rotation are intentionally not gameplay controls.
 
 | Keyboard input | Action |
 | --- | --- |
@@ -76,8 +76,9 @@ controls.
 | `Home` | Capture a screenshot through the game action |
 
 Touch mode provides a virtual joystick, tappable hotbar, contextual interact,
-target and chat actions, and a compact main menu. The same automatic camera
-follows the character; no world-swipe rotation is required.
+target and chat actions, and a compact main menu. The same behind-the-character
+camera follows the character's exact facing angle; no world-swipe rotation is
+required.
 
 ## Web Quality
 

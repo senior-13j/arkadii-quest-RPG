@@ -164,35 +164,35 @@ export class MainMenu {
         let menuItems = {
             inventory: {
                 menuTitle: this._game.t("menu.inventory"),
-                icon: "ICON_MENU_inventory",
+                icon: "./images/ui/rpg/menu-inventory-256.png",
                 click: () => {
                     this.openPanel("inventory");
                 },
             },
             quests: {
                 menuTitle: this._game.t("menu.quests"),
-                icon: "ICON_MENU_quest",
+                icon: "./images/ui/rpg/menu-quests-256.png",
                 click: () => {
                     this.openPanel("quests");
                 },
             },
             abilities: {
                 menuTitle: this._game.t("menu.abilities"),
-                icon: "ICON_MENU_abilities",
+                icon: "./images/ui/rpg/menu-abilities-256.png",
                 click: () => {
                     this.openPanel("abilities");
                 },
             },
             character: {
                 menuTitle: this._game.t("menu.character"),
-                icon: "ICON_MENU_character",
+                icon: "./images/ui/rpg/menu-character-256.png",
                 click: () => {
                     this.openPanel("character");
                 },
             },
             help: {
                 menuTitle: this._game.t("menu.help"),
-                icon: "ICON_MENU_help",
+                icon: "./images/ui/rpg/menu-guide-256.png",
                 click: () => {
                     this.openPanel("help");
                 },
@@ -220,7 +220,11 @@ export class MainMenu {
         let i = 0;
         for (let index in menuItems) {
             let menuItem = menuItems[index];
-            const button = createButton("button_" + i, "", "35px", "30px", menuItem.icon);
+            const button = createButton("button_" + i, "", "42px", "42px", menuItem.icon);
+            button.cornerRadius = 7;
+            button.thickness = 1;
+            button.color = "rgba(216,164,82,.82)";
+            button.background = "rgba(8,20,22,.82)";
             grid.addControl(button);
             this._menuButtons.push(button);
 
@@ -276,18 +280,18 @@ export class MainMenu {
         if (!compact) {
             this._mainPanel.top = "15px";
             this._mainPanel.left = "-15px";
-            this._mainPanel.width = "400px";
-            this._mainPanel.height = "60px";
-            this._menuGrid.left = "-40px";
-            this._menuGrid.height = "30px";
-            this._menuGrid.spacing = 5;
-            this._dropdownButton.width = "30px";
-            this._dropdownButton.height = "30px";
+            this._mainPanel.width = "460px";
+            this._mainPanel.height = "64px";
+            this._menuGrid.left = "-46px";
+            this._menuGrid.height = "44px";
+            this._menuGrid.spacing = 7;
+            this._dropdownButton.width = "42px";
+            this._dropdownButton.height = "42px";
             this._menuButtons.forEach((button) => {
-                button.width = "35px";
-                button.height = "30px";
+                button.width = "42px";
+                button.height = "42px";
             });
-            this._dropdownMenu.top = "60px";
+            this._dropdownMenu.top = "66px";
             this._dropdownMenu.left = "-15px";
             return;
         }

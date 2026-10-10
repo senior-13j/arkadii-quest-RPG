@@ -70,9 +70,12 @@ in a hidden state after closing.
 
 ## Automatic Follow Camera
 
-The gameplay camera follows the active character and maintains the intended
-top-down framing automatically. Movement remains relative to that camera, but
-players do not need to steer the view separately.
+The gameplay camera is a third-person follow camera mounted behind the active
+character. Its bearing is derived directly from the character's facing angle,
+so it turns by the same amount whenever the hero turns; it does not infer a
+separate heading from screen input. Movement remains relative to the camera
+bearing captured when the player changes direction, so the view never bends a
+held movement path. Players do not need to steer the view separately.
 
 The desktop profile intentionally has no mouse-wheel zoom or right-/middle-drag
 rotation. The touch profile likewise does not require world-swipe rotation.
@@ -121,8 +124,8 @@ mouse events.
 | Main menu | Open inventory, quests, abilities, character, and help panels |
 | Guide button | Reopen onboarding and the touch controls reference |
 
-The camera follows the character automatically. Dragging the world is reserved
-for normal touch interaction and does not rotate the view.
+The camera follows and turns behind the character automatically. Dragging the
+world is reserved for normal touch interaction and does not rotate the view.
 
 Interactive controls use approximately 44 CSS px or larger targets. The HUD,
 hotbar, joystick, action controls, status bars, chat, hints, and panels have

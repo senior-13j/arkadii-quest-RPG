@@ -45,10 +45,11 @@ export class ExperienceBar {
         experienceBar.top = "2px";
         experienceBar.left = "0px";
         experienceBar.width = 1;
-        experienceBar.height = "20px";
+        experienceBar.height = "24px";
         experienceBar.thickness = 2;
-        experienceBar.color = "rgba(0,0,0,1)";
-        experienceBar.background = getBg();
+        experienceBar.cornerRadius = 8;
+        experienceBar.color = "rgba(216,164,82,.84)";
+        experienceBar.background = "rgba(7,18,21,.94)";
         experienceBar.verticalAlignment = Control.VERTICAL_ALIGNMENT_BOTTOM;
         experienceBar.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
         this._playerUI.addControl(experienceBar);
@@ -60,7 +61,8 @@ export class ExperienceBar {
         experienceBarInside.width = "400px";
         experienceBarInside.thickness = 0;
         experienceBarInside.height = "20px";
-        experienceBarInside.background = "violet";
+        experienceBarInside.cornerRadius = 6;
+        experienceBarInside.background = "#3d9d9a";
         experienceBarInside.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         experienceBarInside.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
         experienceBar.addControl(experienceBarInside);
@@ -68,7 +70,7 @@ export class ExperienceBar {
 
         const experienceBarTextRight = new TextBlock("experienceBarTextRight");
         experienceBarTextRight.text = "0";
-        experienceBarTextRight.color = "#FFF";
+        experienceBarTextRight.color = "#f6e4b7";
         experienceBarTextRight.top = "0px";
         experienceBarTextRight.left = "-5px";
         experienceBarTextRight.fontSize = "11px";
@@ -81,7 +83,7 @@ export class ExperienceBar {
 
         const experienceBarTextLeft = new TextBlock("experienceBarTextLeft");
         experienceBarTextLeft.text = "0";
-        experienceBarTextLeft.color = "#FFF";
+        experienceBarTextLeft.color = "#f6e4b7";
         experienceBarTextLeft.top = "1px";
         experienceBarTextLeft.left = "5px";
         experienceBarTextLeft.fontSize = "11px";

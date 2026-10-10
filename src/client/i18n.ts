@@ -11,8 +11,8 @@ const en = {
         "a11y.gameTitle": "Arkadii Quest multiplayer browser RPG",
         "a11y.gameDescription": "Explore Arkadia, fight enemies, complete quests, collect equipment, and chat with other players.",
         "a11y.controlsTitle": "Game controls",
-        "a11y.controls.keyboard": "Move with W, A, S, and D. The camera follows automatically. Use the mouse to select and interact, number keys 1 through 9 for hotbar actions, Enter for chat, letter hotkeys for game panels, and F1 for the controls guide.",
-        "a11y.controls.touch": "Move with the on-screen joystick while the camera follows automatically. Tap characters and objects to interact, tap the hotbar to use abilities, and use the guide button to review controls.",
+        "a11y.controls.keyboard": "Move with W, A, S, and D. The third-person camera stays behind your hero and turns with the same facing angle. Use the mouse to select and interact, number keys 1 through 9 for hotbar actions, Enter for chat, letter hotkeys for game panels, and F1 for the controls guide.",
+        "a11y.controls.touch": "Move with the on-screen joystick while the third-person camera stays behind your hero and turns with the same facing angle. Tap characters and objects to interact, tap the hotbar to use abilities, and use the guide button to review controls.",
         "a11y.canvas": "Arkadii Quest interactive 3D game",
         "a11y.canvasFallback": "Arkadii Quest requires a browser with canvas and WebGL support. Open technical help for compatibility information.",
         "a11y.loadingProgress": "Game loading progress",
@@ -221,7 +221,7 @@ const en = {
         "guide.touch.actions": "Target, interact, and chat",
         "guide.touch.hotbarTitle": "Bottom hotbar",
         "guide.touch.hotbar": "Use abilities",
-        "guide.camera": "The camera keeps a fixed angle, follows, looks ahead, and zooms automatically.",
+        "guide.camera": "The third-person camera is fixed behind your hero and turns with the same facing angle.",
         "guide.later": "Close for now",
         "guide.start": "Begin the quest",
 } as const;
@@ -445,7 +445,7 @@ const ru: Record<keyof typeof en, string> = {
         "guide.touch.actions": "Цель, взаимодействие и чат",
         "guide.touch.hotbarTitle": "Нижняя панель",
         "guide.touch.hotbar": "Применение умений",
-        "guide.camera": "Камера сохраняет фиксированный угол, сама следует за героем, смотрит вперёд и меняет масштаб.",
+        "guide.camera": "Камера закреплена за спиной героя и поворачивается вместе с ним на тот же угол.",
         "guide.later": "Закрыть пока",
         "guide.start": "Начать задание",
 };
@@ -614,12 +614,12 @@ export const gameContent = {
         movementTouch: localized("Use the virtual joystick in the lower-left corner.", "Используйте виртуальный джойстик в левом нижнем углу."),
         cameraTitle: localized("Automatic camera", "Автоматическая камера"),
         cameraKeyboard: localized(
-            "The camera keeps a fixed isometric angle, follows your hero, looks ahead while moving, and adjusts distance automatically. The mouse wheel and dragging do not control it.",
-            "Камера сохраняет фиксированный изометрический угол, следует за героем, смотрит вперёд при движении и автоматически меняет дистанцию. Колесо и перетаскивание мышью ей не управляют."
+            "The third-person camera stays fixed behind your hero and turns by the same angle as the character. It keeps the road ahead in frame and adjusts distance automatically. The mouse wheel and dragging do not control it.",
+            "Камера закреплена за спиной героя и поворачивается на тот же угол, что и персонаж. Она держит дорогу впереди в кадре и сама меняет дистанцию. Колесо и перетаскивание мышью ей не управляют."
         ),
         cameraTouch: localized(
-            "The camera keeps a fixed isometric angle, follows your hero, looks ahead while moving, and adjusts distance automatically. Swiping the world does not rotate it.",
-            "Камера сохраняет фиксированный изометрический угол, следует за героем, смотрит вперёд при движении и автоматически меняет дистанцию. Проведение по миру её не поворачивает."
+            "The third-person camera stays fixed behind your hero and turns by the same angle as the character. It keeps the road ahead in frame and adjusts distance automatically. Swiping the world does not rotate it.",
+            "Камера закреплена за спиной героя и поворачивается на тот же угол, что и персонаж. Она держит дорогу впереди в кадре и сама меняет дистанцию. Проведение по миру её не поворачивает."
         ),
         attackTitle: localized("Combat", "Сражения"),
         attackKeyboard: localized("Select a target, then press 1 through 9 or click an action on the hotbar.", "Выберите цель, затем нажмите клавишу от 1 до 9 или выберите действие на панели быстрого доступа."),

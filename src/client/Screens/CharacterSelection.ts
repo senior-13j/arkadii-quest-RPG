@@ -59,7 +59,7 @@ export class CharacterSelectionScene {
         const guiMenu = AdvancedDynamicTexture.CreateFullscreenUI("UI");
         this._ui = guiMenu;
 
-        const background = new Image("arkadiiSelectionBackground", "./images/arkadii-quest-keyart.webp");
+        const background = new Image("arkadiiSelectionBackground", "./images/arkadii-quest-frontier.webp");
         background.width = 1;
         background.height = 1;
         background.stretch = Image.STRETCH_FILL;

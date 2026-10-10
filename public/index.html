@@ -18,7 +18,7 @@
         <link rel="manifest" href="./manifest.webmanifest">
         <link rel="icon" type="image/svg+xml" href="./images/arkadii-quest-mark.svg">
         <link rel="alternate icon" type="image/x-icon" href="./favicon.ico">
-        <link rel="preload" href="./images/arkadii-quest-keyart.webp" as="image" type="image/webp" fetchpriority="high">
+        <link rel="preload" href="./images/arkadii-quest-frontier.webp" as="image" type="image/webp" fetchpriority="high">
 
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Arkadii Quest">
@@ -30,7 +30,7 @@
         <meta property="og:url" content="https://arkadii.world/game/">
         <meta property="og:locale" content="en_US">
         <meta property="og:locale:alternate" content="ru_RU">
-        <meta property="og:image" content="https://arkadii.world/game/images/arkadii-quest-social.webp">
+        <meta property="og:image" content="https://arkadii.world/game/images/arkadii-quest-social-rpg.webp">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         <meta property="og:image:type" content="image/webp">
@@ -41,7 +41,7 @@
             name="twitter:description"
             content="An old-school multiplayer fantasy adventure in your browser."
         >
-        <meta name="twitter:image" content="https://arkadii.world/game/images/arkadii-quest-social.webp">
+        <meta name="twitter:image" content="https://arkadii.world/game/images/arkadii-quest-social-rpg.webp">
         <meta name="twitter:image:alt" content="Arkadii Quest — an adventurer overlooking the realm of Arkadia">
 
         <script type="application/ld+json">
@@ -51,7 +51,7 @@
                 "name": "Arkadii Quest",
                 "alternateName": "Аркадия Квест",
                 "url": "https://arkadii.world/game/",
-                "image": "https://arkadii.world/game/images/arkadii-quest-social.webp",
+                "image": "https://arkadii.world/game/images/arkadii-quest-social-rpg.webp",
                 "description": "A free old-school multiplayer 3D browser RPG set in Arkadia, with quests, combat, loot, character progression, and global chat.",
                 "genre": ["Role-playing game", "Multiplayer online game"],
                 "gamePlatform": "Web browser",
@@ -76,7 +76,7 @@
             <section id="gameInstructions" class="sr-only" aria-labelledby="gameInstructionsTitle">
                 <h2 id="gameInstructionsTitle" data-i18n="a11y.controlsTitle">Game controls</h2>
                 <p id="gameInstructionsText">
-                    Move with W, A, S, and D while the camera follows automatically. Use the mouse to select and
+                    Move with W, A, S, and D while the camera stays behind your hero and follows the same facing angle. Use the mouse to select and
                     interact, number keys 1 through 9 for hotbar actions, Enter for chat, and F1 for the full guide.
                 </p>
             </section>
@@ -255,14 +255,14 @@
                         type="button"
                         data-i18n-aria-label="touch.target"
                         data-i18n-title="touch.target"
-                    ><span aria-hidden="true">◎</span></button>
+                    ><img src="./images/icons/ICON_UI_target.png" alt="" width="30" height="30"></button>
                     <button
                         id="touchChatButton"
                         class="touch-action"
                         type="button"
                         data-i18n-aria-label="touch.chat"
                         data-i18n-title="touch.chat"
-                    ><span aria-hidden="true">#</span></button>
+                    ><img src="./images/icons/ICON_UI_chat.png" alt="" width="30" height="30"></button>
                 </div>
             </section>
 

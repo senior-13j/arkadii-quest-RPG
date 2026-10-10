@@ -90,7 +90,7 @@ test("keyboard controls and automatic camera drive the English game", async ({ p
     await expect(page.locator("#onboardingTitle")).toContainText("Arkadia");
     await expect(page.locator(".control-grid--keyboard")).toContainText("WASD");
     await expect(page.locator(".control-grid--keyboard")).toContainText("1–9");
-    await expect(page.locator(".camera-note")).toContainText(/follows/i);
+    await expect(page.locator(".camera-note")).toContainText(/fixed behind/i);
     await page.locator("#onboardingStart").click();
     await expect(page.locator("#onboardingOverlay")).toBeHidden();
     await expect(page.locator("#quickGuideButton")).toBeVisible();
@@ -154,12 +154,16 @@ test("keyboard controls and automatic camera drive the English game", async ({ p
     await page.keyboard.press("Enter");
     await expect.poll(() => page.evaluate(() => (window as any).__ARKADII_QUEST_APP__.game.gamescene._ui._ChatBox.isFocused())).toBe(false);
 
-    const cameraBefore = await page.evaluate(() => (window as any).__ARKADII_QUEST_APP__.game.deltaCamY);
+    const desiredYawBefore = await page.evaluate(
+        () => (window as any).__ARKADII_QUEST_APP__.game.gamescene._currentPlayer.cameraController.desiredYaw
+    );
     await page.mouse.move(850, 450);
     await page.mouse.down({ button: "right" });
     await page.mouse.move(970, 450, { steps: 8 });
     await page.mouse.up({ button: "right" });
-    await expect.poll(() => page.evaluate(() => (window as any).__ARKADII_QUEST_APP__.game.deltaCamY)).toBe(cameraBefore);
+    await expect
+        .poll(() => page.evaluate(() => (window as any).__ARKADII_QUEST_APP__.game.gamescene._currentPlayer.cameraController.desiredYaw))
+        .toBe(desiredYawBefore);
 
     const fovBefore = await page.evaluate(
         () => (window as any).__ARKADII_QUEST_APP__.game.gamescene._currentPlayer.cameraController.camera.fov
@@ -247,10 +251,14 @@ test("touch controls drive the localized mobile game", async ({ page, context },
         const camera = app.game.gamescene._currentPlayer.cameraController;
         return {
             yaw: app.game.deltaCamY,
+            characterYaw: app.game.gamescene._currentPlayer.rotation.y,
             targetDistance: camera._camRoot.position.subtract(app.game.gamescene._currentPlayer.position).length(),
         };
     });
-    expect(cameraState.yaw).toBe(2.7);
+    expect(Number.isFinite(cameraState.yaw)).toBe(true);
+    expect(Math.abs(cameraState.yaw - 2.7)).toBeGreaterThan(0.05);
+    const relativeYaw = ((cameraState.yaw - cameraState.characterYaw + Math.PI) % (Math.PI * 2)) - Math.PI;
+    expect(Math.abs(Math.abs(relativeYaw) - Math.PI)).toBeLessThan(0.01);
     expect(cameraState.targetDistance).toBeLessThan(5);
 
     await page.locator("#touchTargetButton").tap();

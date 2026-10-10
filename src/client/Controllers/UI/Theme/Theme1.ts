@@ -11,8 +11,13 @@ const createButton = function (name, text, width, height, icon?: string, size: s
     applyTheme(result);
 
     if (icon) {
-        let image = new Image("img" + name, "images/icons/" + icon + ".png");
+        const source = icon.includes("/") ? icon : "images/icons/" + icon + ".png";
+        let image = new Image("img" + name, source);
         image.stretch = Image.STRETCH_UNIFORM;
+        image.paddingLeftInPixels = 5;
+        image.paddingRightInPixels = 5;
+        image.paddingTopInPixels = 5;
+        image.paddingBottomInPixels = 5;
         result.addControl(image);
     }
 
@@ -50,10 +55,10 @@ const generatePanel = function (panelName: string = "Default Name", width = "300
 };
 
 const applyTheme = function (panel) {
-    panel.thickness = 1;
-    panel.cornerRadius = 2;
+    panel.thickness = 2;
+    panel.cornerRadius = 8;
     panel.background = getBg();
-    panel.color = "rgba(217,170,67,0.9)";
+    panel.color = "rgba(216,164,82,0.92)";
     panel.fontFamily = getFont();
 };
 
@@ -63,15 +68,15 @@ const applyFont = function (p: Rectangle, size = "12px") {
 };
 
 const getFont = function () {
-    return "Arial, sans-serif";
+    return "Georgia, Cambria, serif";
 };
 
 const getBg = function () {
-    return "rgba(7,16,11,.9)";
+    return "rgba(9, 22, 24, .93)";
 };
 
 const getPadding = function (multiplier = 1) {
-    return multiplier * 5;
+    return multiplier * 8;
 };
 
 const getSidebarWidth = function () {

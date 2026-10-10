@@ -73,7 +73,7 @@ body {
     padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
         max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
     overflow: hidden;
-    background: var(--aq-ink) url("./images/arkadii-quest-keyart.webp") center / cover no-repeat;
+    background: var(--aq-ink) url("./images/arkadii-quest-frontier.webp") center / cover no-repeat;
     isolation: isolate;
 }
 
@@ -82,7 +82,7 @@ body {
     inset: 0;
     z-index: -1;
     content: "";
-    background: linear-gradient(180deg, rgba(5, 11, 8, 0.62), rgba(5, 11, 8, 0.88));
+    background: linear-gradient(145deg, rgba(3, 13, 18, 0.52), rgba(4, 13, 12, 0.9));
 }
 
 .loading-panel {
@@ -91,9 +91,9 @@ body {
     text-align: center;
     background: var(--aq-panel);
     border: 1px solid rgba(217, 170, 67, 0.64);
-    border-radius: 3px;
-    box-shadow: 0 18px 64px rgba(0, 0, 0, 0.42);
-    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 240, 186, 0.08);
+    backdrop-filter: blur(12px);
 }
 
 .loading-logo {
@@ -224,7 +224,7 @@ body {
     padding: max(20px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
         max(20px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
     overflow: auto;
-    background: var(--aq-ink) url("./images/arkadii-quest-keyart.webp") center / cover no-repeat;
+    background: var(--aq-ink) url("./images/arkadii-quest-frontier.webp") center / cover no-repeat;
     isolation: isolate;
 }
 
@@ -233,7 +233,7 @@ body {
     inset: 0;
     z-index: -1;
     content: "";
-    background: linear-gradient(90deg, rgba(4, 10, 7, 0.83), rgba(4, 10, 7, 0.54), rgba(4, 10, 7, 0.83));
+    background: linear-gradient(90deg, rgba(3, 12, 16, 0.91), rgba(4, 18, 18, 0.48), rgba(3, 12, 16, 0.91));
 }
 
 .entry-setup__panel {
@@ -242,9 +242,9 @@ body {
     color: #ffffff;
     background: var(--aq-panel);
     border: 1px solid rgba(217, 170, 67, 0.64);
-    border-radius: 3px;
-    box-shadow: 0 18px 64px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 240, 186, 0.08);
+    backdrop-filter: blur(12px);
 }
 
 .entry-setup__panel > img {
@@ -426,7 +426,7 @@ body {
     padding: max(20px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
         max(20px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
     overflow: auto;
-    background: var(--aq-ink) url("./images/arkadii-quest-keyart.webp") center / cover no-repeat;
+    background: var(--aq-ink) url("./images/arkadii-quest-frontier.webp") center / cover no-repeat;
     isolation: isolate;
 }
 
@@ -435,7 +435,7 @@ body {
     inset: 0;
     z-index: -1;
     content: "";
-    background: linear-gradient(90deg, rgba(4, 10, 7, 0.84), rgba(4, 10, 7, 0.56), rgba(4, 10, 7, 0.84));
+    background: linear-gradient(90deg, rgba(3, 12, 16, 0.92), rgba(4, 18, 18, 0.5), rgba(3, 12, 16, 0.92));
 }
 
 .login-panel {
@@ -444,9 +444,9 @@ body {
     color: #ffffff;
     background: var(--aq-panel);
     border: 1px solid rgba(217, 170, 67, 0.64);
-    border-radius: 3px;
-    box-shadow: 0 18px 64px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 240, 186, 0.08);
+    backdrop-filter: blur(12px);
 }
 
 .login-panel > img {

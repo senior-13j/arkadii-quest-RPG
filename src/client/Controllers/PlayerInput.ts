@@ -67,6 +67,10 @@ export class PlayerInput {
     public angle: number = 0;
     public horizontal: number = 0;
     public vertical: number = 0;
+    // Movement keeps the camera bearing from the instant the direction changed.
+    // That lets the chase camera catch up without bending a held movement arc.
+    private movementCameraYaw: number | null = null;
+    private previousMovementAngle: number | null = null;
 
     public left_click: boolean = false;
     public player_can_move: boolean = false;
@@ -267,9 +271,19 @@ export class PlayerInput {
 
         const normalizedX = x / Math.hypot(x, y);
         const normalizedY = y / Math.hypot(x, y);
-        this.angle = Math.atan2(normalizedX, normalizedY);
-        this.vertical = -Math.cos(this.angle + Math.PI - this._game.deltaCamY) * magnitude;
-        this.horizontal = Math.sin(this.angle + Math.PI - this._game.deltaCamY) * magnitude;
+        const nextAngle = Math.atan2(normalizedX, normalizedY);
+        if (
+            this.movementCameraYaw === null ||
+            this.previousMovementAngle === null ||
+            Math.abs(this.shortestAngle(nextAngle - this.previousMovementAngle)) > 0.01
+        ) {
+            this.movementCameraYaw = this._game.deltaCamY;
+            this.previousMovementAngle = nextAngle;
+        }
+
+        this.angle = nextAngle;
+        this.vertical = -Math.cos(this.angle + Math.PI - this.movementCameraYaw) * magnitude;
+        this.horizontal = Math.sin(this.angle + Math.PI - this.movementCameraYaw) * magnitude;
         this.player_can_move = true;
     }
 
@@ -278,6 +292,13 @@ export class PlayerInput {
         this.vertical = 0;
         this.horizontal = 0;
         this.angle = 0;
+        this.movementCameraYaw = null;
+        this.previousMovementAngle = null;
+    }
+
+    private shortestAngle(angle: number): number {
+        const tau = Math.PI * 2;
+        return ((angle + Math.PI) % tau + tau) % tau - Math.PI;
     }
 
     private isTyping(): boolean {

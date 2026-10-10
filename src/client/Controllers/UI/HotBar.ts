@@ -71,6 +71,10 @@ export class HotBar {
         );
         abilityMainPanel.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
         abilityMainPanel.verticalAlignment = Control.VERTICAL_ALIGNMENT_BOTTOM;
+        abilityMainPanel.cornerRadius = 10;
+        abilityMainPanel.thickness = 2;
+        abilityMainPanel.color = "rgba(216,164,82,.92)";
+        abilityMainPanel.background = "rgba(7,18,21,.94)";
         abilityMainPanel.isPointerBlocker = true;
         this._playerUI.addControl(abilityMainPanel);
 
@@ -103,9 +107,10 @@ export class HotBar {
             headlineRect.left = column * cellSize + "px";
             headlineRect.width = layout.iconSize + "px";
             headlineRect.height = layout.iconSize + "px";
-            headlineRect.thickness = 1;
-            headlineRect.color = "rgba(217,170,67,.72)";
-            headlineRect.background = "rgba(13,28,19,.88)";
+            headlineRect.thickness = 2;
+            headlineRect.cornerRadius = 7;
+            headlineRect.color = "rgba(216,164,82,.82)";
+            headlineRect.background = "rgba(13,28,31,.96)";
             headlineRect.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
             headlineRect.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
             abilityPanel.addControl(headlineRect);
@@ -132,8 +137,15 @@ export class HotBar {
     }
 
     addIcon(digit, hotbar, hotbarData, headlineRect: Rectangle) {
-        var img = new Image("ability_image_" + digit, "./images/icons/" + hotbarData.icon + ".png");
+        const source = hotbar.type === "ability" && hotbarData.key === "base_attack"
+            ? "./images/ui/rpg/ability-strike-256.png"
+            : "./images/icons/" + hotbarData.icon + ".png";
+        var img = new Image("ability_image_" + digit, source);
         img.stretch = Image.STRETCH_FILL;
+        img.paddingLeftInPixels = 4;
+        img.paddingRightInPixels = 4;
+        img.paddingTopInPixels = 4;
+        img.paddingBottomInPixels = 4;
         headlineRect.addControl(img);
 
         if (this._game.controlMode !== "touch") {

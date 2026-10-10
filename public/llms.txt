@@ -28,9 +28,10 @@ interaction, Tab for the nearest target, Enter for chat, and panel hotkeys.
 Touch play uses a virtual joystick, a tappable hotbar, and contextual target,
 interaction, and chat buttons.
 
-The gameplay camera keeps a fixed isometric angle, follows the active hero,
-looks ahead while moving, and adjusts distance automatically. Mouse-wheel zoom,
-mouse-drag rotation, and touch-swipe rotation are not camera controls.
+The gameplay third-person camera is fixed behind the active hero and follows
+the exact same facing angle, while keeping the road ahead in frame and
+adjusting distance automatically. Mouse-wheel zoom, mouse-drag rotation, and
+touch-swipe rotation are not camera controls.
 
 ## Technology
 

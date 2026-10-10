@@ -102,8 +102,9 @@ current requirements.
   hotbar actions, chat, and panels in the selected language.
 - `F1` on desktop and the touch guide button reliably reopen the controls
   table; `Escape` closes it without leaving movement or touch HUD state stuck.
-- The camera follows the active character automatically. Wheel, right-/middle
-  drag, and touch world-swipe do not rotate or zoom the gameplay camera.
+- The third-person camera remains behind the active character and follows its
+  exact facing angle. Wheel, right-/middle drag, and touch world-swipe do not
+  rotate or zoom the gameplay camera.
 - Desktop, phone portrait, and short-landscape layouts keep the guide and HUD
   inside the viewport with visible focus and practical touch targets.
 - The local logo, key art, icons, favicon, and social image load without stale

@@ -436,10 +436,11 @@ After a public rollout:
 3. Enter the world as a new player, complete the localized onboarding prompt,
    dismiss it, and verify that `F1` reopens the controls table on desktop and
    the guide button reopens it on touch.
-4. On desktop, verify WASD movement, stable automatic follow-camera behavior,
+4. On desktop, verify WASD movement, a camera that remains behind the character
+   and turns by the same facing angle,
    `1`-`9`, panel hotkeys, nearest targeting/interaction, and chat. Confirm that
    wheel and mouse-drag input do not rotate or zoom the gameplay camera.
-5. On a phone or tablet, verify joystick movement, automatic camera tracking,
+5. On a phone or tablet, verify joystick movement, behind-the-character camera tracking,
    hotbar, contextual actions, chat, menu panels, portrait layout, and
    short-landscape layout without requiring world-swipe camera control.
 6. Confirm keyboard focus remains visible and every touch action has a practical

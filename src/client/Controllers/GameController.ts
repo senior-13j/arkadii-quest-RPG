@@ -47,7 +47,7 @@ export class GameController {
     public _currentCharacter;
     public selectedEntity;
     public currentMs: number;
-    public deltaCamY: number = 2.7; // fixed isometric yaw used for screen-relative movement
+    public deltaCamY: number = 2.7; // chase-camera yaw used for screen-relative movement
     public latestError: string;
     public isMobile: boolean = false;
     public currentChats = [];

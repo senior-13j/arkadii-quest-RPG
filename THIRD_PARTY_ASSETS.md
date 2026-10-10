@@ -1,6 +1,6 @@
 # Third-Party Assets and Provenance Ledger
 
-Last reviewed: 2026-09-06
+Last reviewed: 2026-10-10
 
 This is the working provenance record for visual, audio, font, model, and
 vendored runtime assets in Arkadii Quest. It covers both the public game bundle
@@ -60,6 +60,9 @@ file-by-file proof of which packages Webpack emitted.
 | `public/images/arkadii-quest-mark.svg` | Compass-shield mark created in this repository for the 2026 rebrand | Project-created; preserve the repository history as the source record |
 | `public/images/arkadii-quest-keyart.webp` | Generated specifically for this rebrand with OpenAI image generation; no input reference image was supplied | Project-created for this release; retain prompt/tool/date provenance in project records when practical |
 | `public/images/arkadii-quest-social.webp` | Social-card derivative created for Arkadii Quest from the new visual direction | Project-created derivative |
+| `public/images/arkadii-quest-frontier.webp`, `public/images/arkadii-quest-social-rpg.webp` | Original frontier key art and social-card crop generated for Arkadii Quest with OpenAI image generation on 2026-10-10; no input image or third-party style reference was supplied | Project-created for this release; visual direction is an original high-fantasy frontier, not a recreation of another game |
+| `public/images/ui/rpg/*-256.png` | Original menu and base-attack UI icons generated for Arkadii Quest with OpenAI image generation on 2026-10-10; no input image or third-party style reference was supplied | Project-created for this release; retain the generated delivery files and prompt records when practical |
+| `public/images/icons/ICON_*.png` and `public/images/icons/talk.png` | Original inventory, ability, menu, interaction, and targeting icons generated as an Arkadii Quest RPG atlas with OpenAI image generation on 2026-10-10, then exported into the shipped icon paths; no input image or third-party style reference was supplied | Project-created for this release; all active inventory and ability icon consumers retain their existing keys while loading the new art |
 | `public/images/arkadii-quest-icon-192.png`, `public/images/arkadii-quest-icon-512.png`, `public/favicon.ico` | Raster/application-icon derivatives of the new Arkadii Quest mark | Project-created derivatives |
 
 These records cover asset provenance, not trademark policy. Arkadii Quest is not

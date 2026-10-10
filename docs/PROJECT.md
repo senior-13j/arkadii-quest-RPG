@@ -117,8 +117,9 @@ panel dismissal, and `F1` access to onboarding. Touch mode creates a DOM
 joystick and action cluster for interaction, targeting, and chat; the Babylon
 hotbar remains directly tappable.
 
-Both profiles use the same automatic follow camera. It tracks the active
-character and maintains a stable top-down composition, so mouse-wheel zoom,
+Both profiles use the same behind-the-character third-person camera. Its bearing
+is the active character's facing angle plus the fixed behind-the-back offset,
+so turning the hero turns the camera by the exact same amount. Mouse-wheel zoom,
 mouse-drag rotation, and touch-swipe rotation are not part of normal play.
 
 Movement vectors are normalized client-side and validated again server-side.

@@ -53,7 +53,9 @@ export class EntitySelectedBar {
         }
         ////////////////////////////////////
         //////////////////// panel
-        const selectedEntityBar = generatePanel("selected" + this._options.panelName, panelWidth + "px;", "62px", topMargin + "px", leftMargin + "px");
+        const selectedEntityBar = generatePanel("selected" + this._options.panelName, panelWidth + "px;", "72px", topMargin + "px", leftMargin + "px");
+        selectedEntityBar.cornerRadius = 9;
+        selectedEntityBar.thickness = 2;
         selectedEntityBar.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
         selectedEntityBar.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         this._playerUI.addControl(selectedEntityBar);
@@ -70,8 +72,10 @@ export class EntitySelectedBar {
         imgPanel.height = "45px";
         imgPanel.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
         imgPanel.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
-        imgPanel.background = "black";
-        imgPanel.thickness = 0;
+        imgPanel.background = "rgba(4,12,14,.95)";
+        imgPanel.thickness = 1;
+        imgPanel.cornerRadius = 5;
+        imgPanel.color = "rgba(216,164,82,.72)";
         paddingPanel.addControl(imgPanel);
 
         if (this._options.currentPlayer !== false) {
@@ -90,7 +94,10 @@ export class EntitySelectedBar {
         healthBar.left = "50px";
         healthBar.width = barWidth + "px;";
         healthBar.height = "25px";
-        healthBar.thickness = 0;
+        healthBar.thickness = 1;
+        healthBar.cornerRadius = 4;
+        healthBar.color = "rgba(234,220,185,.32)";
+        healthBar.background = "rgba(3,10,12,.78)";
         healthBar.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         healthBar.horizontalAlignment = alignHoriz;
         paddingPanel.addControl(healthBar);
@@ -101,7 +108,8 @@ export class EntitySelectedBar {
         healthBarInside.width = 1;
         healthBarInside.thickness = 0;
         healthBarInside.height = 1;
-        healthBarInside.background = "#75ed1b";
+        healthBarInside.cornerRadius = 3;
+        healthBarInside.background = "#c45a43";
         healthBarInside.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         healthBarInside.horizontalAlignment = alignHoriz;
         healthBar.addControl(healthBarInside);
@@ -125,7 +133,10 @@ export class EntitySelectedBar {
         manaBar.left = "50px";
         manaBar.width = barWidth + "px;";
         manaBar.height = "17px";
-        manaBar.thickness = 0;
+        manaBar.thickness = 1;
+        manaBar.cornerRadius = 4;
+        manaBar.color = "rgba(234,220,185,.25)";
+        manaBar.background = "rgba(3,10,12,.78)";
         manaBar.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         manaBar.horizontalAlignment = alignHoriz;
         paddingPanel.addControl(manaBar);
@@ -136,7 +147,8 @@ export class EntitySelectedBar {
         manaBarInside.width = 1;
         manaBarInside.thickness = 0;
         manaBarInside.height = 1;
-        manaBarInside.background = "blue";
+        manaBarInside.cornerRadius = 3;
+        manaBarInside.background = "#3d9d9a";
         manaBarInside.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         manaBarInside.horizontalAlignment = alignHoriz;
         manaBar.addControl(manaBarInside);
